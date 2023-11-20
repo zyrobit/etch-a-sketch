@@ -7,3 +7,19 @@ for (let i = 0; i < 16; i++) {
         gridContainer.appendChild(gridSquare);
     }
 }
+
+const gridSquares = document.querySelectorAll('.grid-square');
+gridSquares.forEach(square => {
+    square.addEventListener('mouseover', function() {
+        square.style.backgroundColor = getRandomColor(); // Change color on hover
+    });
+});
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
